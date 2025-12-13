@@ -32,6 +32,8 @@ public class Easy_RAG_Example {
         ChatModel CHAT_MODEL = OllamaChatModel.builder()
                 .baseUrl("http://localhost:11434") // your ollama server url
                 .modelName("gemma3:4b")  // or llama3, qwen2, phi3, etc
+                .logRequests(true)
+                .logResponses(true)
                 .build();
         // First, let's load documents that we want to use for RAG
         List<Document> documents = loadDocuments(toPath("documents/"), glob("*.txt"));

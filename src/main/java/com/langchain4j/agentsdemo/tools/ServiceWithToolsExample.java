@@ -38,6 +38,8 @@ public class ServiceWithToolsExample {
         ChatModel model = OllamaChatModel.builder()
                 .baseUrl("http://localhost:11434") // your ollama server url
                 .modelName("orieg/gemma3-tools:4b") // model with tools support
+                .logRequests(true)
+                .logResponses(true)
                 .build();
 
         Assistant assistant = AiServices.builder(Assistant.class)

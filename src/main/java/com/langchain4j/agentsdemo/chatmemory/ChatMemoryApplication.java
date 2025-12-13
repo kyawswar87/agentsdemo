@@ -11,6 +11,8 @@ public class ChatMemoryApplication {
         ChatModel model = OllamaChatModel.builder()
                 .baseUrl("http://localhost:11434") // your ollama server url
                 .modelName("gemma3:4b")  // or llama3, qwen2, phi3, etc
+                .logRequests(true)
+                .logResponses(true)
                 .build();
 
         AssistanceAgent assistant = AiServices.builder(AssistanceAgent.class)
